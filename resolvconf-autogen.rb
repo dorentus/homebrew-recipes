@@ -18,7 +18,7 @@ class ResolvconfAutogen < Formula
         <string>#{plist_name}</string>
         <key>ProgramArguments</key>
         <array>
-          <string>#{opt_prefix}/bin/gw-monitor</string>
+          <string>#{opt_prefix}/bin/resolvconf-autogen</string>
           <string>#{etc}/resolv.conf</string>
         </array>
         <key>RunAtLoad</key>
