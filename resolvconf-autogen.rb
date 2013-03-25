@@ -1,9 +1,9 @@
 require 'formula'
 
-class GwMonitor < Formula
-  homepage 'https://github.com/dorentus/gw-monitor'
+class ResolvconfAutogen < Formula
+  homepage 'https://github.com/dorentus/resolvconf-autogen'
 
-  head 'https://github.com/dorentus/gw-monitor.git'
+  head 'https://github.com/dorentus/resolvconf-autogen.git'
 
   def install
     rake "install", "prefix=#{prefix}"
