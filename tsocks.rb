@@ -25,10 +25,6 @@ class Tsocks < Formula
     etc.install 'tsocks.conf.simple.example' => 'tsocks.conf' unless config_file.exist?
   end
 
-  def patches
-    DATA
-  end
-
   def caveats; <<-EOS.undent
     The configuration file is: #{config_file}.
     Please edit it first.
@@ -49,14 +45,3 @@ class Tsocks < Formula
   end
 
 end
-
-__END__
---- /dev/null
-+++ b/tsocks.conf
-@@ -0,0 +1,6 @@
-+local = 192.168.0.0/255.255.255.0
-+local = 10.0.0.0/255.0.0.0
-+
-+server = localhost
-+server_type = 5
-+server_port = 1080
