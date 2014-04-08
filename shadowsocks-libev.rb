@@ -3,8 +3,8 @@ require 'formula'
 class ShadowsocksLibev < Formula
   homepage 'https://github.com/madeye/shadowsocks-libev'
 
-  url 'https://github.com/madeye/shadowsocks-libev.git', :tag => 'v1.4.2'
-  version '1.4.2'
+  url 'https://github.com/madeye/shadowsocks-libev.git', :tag => 'v1.4.4'
+  version '1.4.4'
 
   head 'https://github.com/madeye/shadowsocks-libev.git'
 
