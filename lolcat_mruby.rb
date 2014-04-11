@@ -9,10 +9,10 @@ class LolcatMruby < Formula
   head 'https://github.com/dorentus/mruby-lolcat-bin.git'
 
   def install
-    rake "install", "prefix=#{prefix}"
+    syetem "make install PREFIX=#{prefix}"
   end
 
   def test
-    system "brew list | lolcat_m" 
+    system "brew list | lolcat_m"
   end
 end
