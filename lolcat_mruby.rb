@@ -9,7 +9,7 @@ class LolcatMruby < Formula
   head 'https://github.com/dorentus/mruby-lolcat-bin.git'
 
   def install
-    syetem "make install PREFIX=#{prefix}"
+    system "make install PREFIX=#{prefix}"
   end
 
   def test
