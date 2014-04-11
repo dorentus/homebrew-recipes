@@ -3,8 +3,8 @@ require 'formula'
 class LolcatMruby < Formula
   homepage 'https://github.com/dorentus/mruby-lolcat-bin'
 
-  url 'https://github.com/dorentus/mruby-lolcat-bin.git', :tag => 'v0.42.1'
-  version '0.42.1'
+  url 'https://github.com/dorentus/mruby-lolcat-bin.git', :tag => 'v0.42.2'
+  version '0.42.2'
 
   head 'https://github.com/dorentus/mruby-lolcat-bin.git'
 
