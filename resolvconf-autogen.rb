@@ -4,7 +4,6 @@ class ResolvconfAutogen < Formula
   homepage 'https://github.com/dorentus/resolvconf-autogen'
 
   url 'https://github.com/dorentus/resolvconf-autogen.git', :tag => '0.1.2'
-  version '0.1.2'
 
   head 'https://github.com/dorentus/resolvconf-autogen.git'
 
