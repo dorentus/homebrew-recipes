@@ -8,7 +8,7 @@ class Tsocks < Formula
   depends_on 'autoconf' => :build if MacOS.xcode_version.to_f >= 4.3
 
   def install
-    inreplace 'tsocks', 'LIBDIR="/lib"', "LIBDIR=\"#{prefix}/tsockslib\""
+    inreplace 'tsocks', 'LIBDIR="/lib"', "LIBDIR=\"#{lib}\""
 
     system "autoconf", "-v"
     system "./configure", "--with-conf=#{config_file}",
