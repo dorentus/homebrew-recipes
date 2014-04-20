@@ -16,7 +16,7 @@ class ShadowspdyClient < Formula
   end
 
   def install
-    system 'npm install'
+    system "#{HOMEBREW_PREFIX}/bin/npm install"
     etc.install 'config.json' => config_file unless (etc/config_file).exist?
     prefix.install Dir["*"]
   end
