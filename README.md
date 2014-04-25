@@ -1,6 +1,6 @@
-homebrew-tap
+homebrew-recipes
 ============
 
 Usage
 =====
-`$ brew tap dorentus/tap`
+`$ brew tap dorentus/recipes`
