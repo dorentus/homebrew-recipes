@@ -17,7 +17,7 @@ class ShadowsocksLibev < Formula
   end
 
   def install
-    inreplace 'shadowsocks.8', '/etc/shadowsocks/config.json', "#{etc}/ss-config.json"
+    inreplace 'shadowsocks.8', '/etc/shadowsocks/config.json', "#{etc}/shadowsocks-client.json"
 
     args = ["--prefix=#{prefix}"]
 
@@ -32,7 +32,7 @@ class ShadowsocksLibev < Formula
     system 'make'
     system 'make install'
     man8.install 'shadowsocks.8'
-    etc.install 'ss-config.json' unless (etc/'ss-config.json').exist?
+    etc.install 'shadowsocks-client.json' unless (etc/'shadowsocks-client.json').exist?
   end
 
   def patches
@@ -40,10 +40,12 @@ class ShadowsocksLibev < Formula
   end
 
   def caveats; <<-EOS.undent
-    The configuration file is: #{etc}/ss-config.json.
-    You should edit it first.
+    The configuration file is: #{etc}/shadowsocks-client.json.
+    Edit before use.
     EOS
   end
+
+  plist_options :manual => "#{opt_bin}/ss-local -c #{etc}/shadowsocks-client.json"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
@@ -54,9 +56,9 @@ class ShadowsocksLibev < Formula
         <string>#{plist_name}</string>
         <key>ProgramArguments</key>
         <array>
-          <string>#{opt_prefix}/bin/ss-local</string>
+          <string>#{opt_bin}/ss-local</string>
           <string>-c</string>
-          <string>#{etc}/ss-config.json</string>
+          <string>#{etc}/shadowsocks-client.json</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
@@ -73,7 +75,7 @@ end
 
 __END__
 --- /dev/null
-+++ b/ss-config.json
++++ b/shadowsocks-client.json
 @@ -0,0 +1,8 @@
 +{
 +    "server":"localhost",
