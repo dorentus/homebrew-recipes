@@ -38,7 +38,7 @@ class ShadowsocksLibev < Formula
   end
 
   def caveats
-    "Edit #{etc}/shadowsocks-client.json to configure Shadowsocks-libev client"
+    "Edit #{etc}/shadowsocks-client.json to configure shadowsocks-libev client"
   end
 
   plist_options :manual => "#{HOMEBREW_PREFIX}/opt/shadowsocks-libev/bin/ss-local -c #{HOMEBREW_PREFIX}/etc/shadowsocks-client.json"
