@@ -8,9 +8,13 @@ class ShadowsocksLibev < Formula
   head 'https://github.com/madeye/shadowsocks-libev.git'
 
   option "with-polarssl", "Use PolarSSL instead of OpenSSL"
-  depends_on "polarssl" if build.with? "polarssl"
-  depends_on "openssl" unless build.with? "polarssl"
+
   depends_on 'libev'
+  if build.with? "polarssl"
+    depends_on "polarssl"
+  else
+    depends_on "openssl"
+  end
 
   def install
     inreplace 'shadowsocks.8', '/etc/shadowsocks/config.json', "#{etc}/ss-config.json"
