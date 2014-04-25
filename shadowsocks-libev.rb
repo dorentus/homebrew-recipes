@@ -15,7 +15,7 @@ class ShadowsocksLibev < Formula
   end
 
   def install
-    inreplace 'shadowsocks.8', '/etc/shadowsocks/config.json', "#{etc}/shadowsocks-client.json"
+    inreplace 'shadowsocks.8', '/etc/shadowsocks/config.json', "#{etc}/shadowsocks-libev.json"
 
     args = ["--prefix=#{prefix}"]
 
@@ -30,7 +30,7 @@ class ShadowsocksLibev < Formula
     system 'make'
     system 'make install'
     man8.install 'shadowsocks.8'
-    etc.install 'shadowsocks-client.json' unless (etc/'shadowsocks-client.json').exist?
+    etc.install 'shadowsocks-libev.json' unless (etc/'shadowsocks-libev.json').exist?
   end
 
   def patches
@@ -38,10 +38,10 @@ class ShadowsocksLibev < Formula
   end
 
   def caveats
-    "Edit #{etc}/shadowsocks-client.json to configure shadowsocks-libev client"
+    "Edit #{etc}/shadowsocks-libev.json to configure shadowsocks-libev"
   end
 
-  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/shadowsocks-libev/bin/ss-local -c #{HOMEBREW_PREFIX}/etc/shadowsocks-client.json"
+  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/shadowsocks-libev/bin/ss-local -c #{HOMEBREW_PREFIX}/etc/shadowsocks-libev.json"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
@@ -54,7 +54,7 @@ class ShadowsocksLibev < Formula
         <array>
           <string>#{opt_bin}/ss-local</string>
           <string>-c</string>
-          <string>#{etc}/shadowsocks-client.json</string>
+          <string>#{etc}/shadowsocks-libev.json</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
@@ -71,7 +71,7 @@ end
 
 __END__
 --- /dev/null
-+++ b/shadowsocks-client.json
++++ b/shadowsocks-libev.json
 @@ -0,0 +1,8 @@
 +{
 +    "server":"localhost",
