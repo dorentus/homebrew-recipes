@@ -39,13 +39,11 @@ class ShadowsocksLibev < Formula
     DATA
   end
 
-  def caveats; <<-EOS.undent
-    The configuration file is: #{etc}/shadowsocks-client.json.
-    Edit before use.
-    EOS
+  def caveats
+    "Edit #{etc}/shadowsocks-client.json to configure Shadowsocks-libev client"
   end
 
-  plist_options :manual => "#{opt_bin}/ss-local -c #{etc}/shadowsocks-client.json"
+  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/shadowsocks-libev/bin/ss-local -c #{HOMEBREW_PREFIX}/etc/shadowsocks-client.json"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

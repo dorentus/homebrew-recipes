@@ -12,7 +12,7 @@ class LolcatMruby < Formula
   end
 
   def caveats
-    %x(echo "Type lolcat -h for usage instructions" | #{prefix}/bin/lolcat -f)
+    %x(echo "Type lolcat -h for usage instructions" | #{bin}/lolcat -f)
   end
 
   def test
