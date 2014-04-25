@@ -2,9 +2,7 @@ require 'formula'
 
 class ShadowsocksLibev < Formula
   homepage 'https://github.com/madeye/shadowsocks-libev'
-
   url 'https://github.com/madeye/shadowsocks-libev.git', :tag => 'v1.4.4'
-
   head 'https://github.com/madeye/shadowsocks-libev.git'
 
   option "with-polarssl", "Use PolarSSL instead of OpenSSL"
