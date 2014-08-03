@@ -34,10 +34,10 @@ class Tsocks < Formula
 
   def test
     puts 'Your current public ip is:'
-    ohai `curl -sS ifconfig.me 2>&1`.chomp
+    ohai `curl -sS showip.net 2>&1`.chomp
     puts "If your correctly configured #{config_file}, this should show the ip you have trough the proxy"
     puts 'Your ip through the proxy is:'
-    ohai `tsocks curl -sS ifconfig.me 2>&1`.chomp
+    ohai `tsocks curl -sS showip.net 2>&1`.chomp
   end
 
   def config_file
