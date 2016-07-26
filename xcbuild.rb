@@ -12,6 +12,16 @@ class Xcbuild < Formula
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
     bin.install_symlink "#{prefix}/usr/bin/xcbuild"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-copy"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-copyPlist"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-copyStrings"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-copyTiff"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-embeddedBinaryValidationUtility"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-infoPlistUtility"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-lsRegisterURL"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-productPackagingUtility"
+    bin.install_symlink "#{prefix}/usr/bin/builtin-validationUtility"
+    bin.install_symlink "#{prefix}/usr/bin/dependency-info-tool"
   end
 
   test do
