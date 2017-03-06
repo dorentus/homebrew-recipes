@@ -4,6 +4,8 @@ class ScanBuild < Formula
   url "http://clang-analyzer.llvm.org/downloads/checker-279.tar.bz2"
   sha256 "f583b58d207e14ce6fc64a623c11d0d8001ab69ffb444b73ba638436a245c784"
 
+  keg_only :versioned_formula
+
   def install
     prefix.install Dir["*"]
   end
