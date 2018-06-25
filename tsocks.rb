@@ -25,7 +25,7 @@ class Tsocks < Formula
     etc.install 'tsocks.conf.simple.example' => 'tsocks.conf' unless config_file.exist?
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     The configuration file is: #{config_file}.
     Please edit it first.
     `man 5 tsocks.conf` for more details.
